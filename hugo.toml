@@ -1,0 +1,27 @@
+baseURL = 'https://natanail.github.io/'
+languageCode = 'en'
+DefaultContentLanguage = 'it'
+title = 'Prova sito'
+author = 'Natanail Danailov'
+theme = 'paper'
+ignoreErrors = ["error-remote-getjson"]
+
+# --------------------------------
+
+[params]
+    color = 'linen'
+
+    github = 'natanail'
+    instagram = 'natanaild'
+    linkedin = 'ndanailov'
+    threads = '@natanaild'
+
+    avatar = 'danailovnatanail@gmail.com'
+    name = 'Natanail Danailov'
+
+[menu]
+
+    [[menu.main]]
+        identifier = "about"
+        name = "About"
+        url = "/about/"
