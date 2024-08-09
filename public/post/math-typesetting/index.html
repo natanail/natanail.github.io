@@ -60,7 +60,7 @@
   />
 
   
-  <title>Contatti - Prova sito</title>
+  <title>Math Typesetting - Prova sito</title>
 
   
   <meta name="theme-color" />
@@ -69,8 +69,8 @@
   
   
   
-  <meta name="description" content=" nddanailov.com me@nddanailov.com " />
-  <meta name="author" content="Natanail Danailov" />
+  <meta name="description" content="Mathematical notation in a Hugo project can be enabled by using third party JavaScript libraries." />
+  <meta name="author" content="lee.so" />
   
 
   
@@ -116,6 +116,45 @@
     onload="hljs.initHighlightingOnLoad();"
   ></script>
   
+
+  
+  
+  
+  
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css"
+  integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI"
+  crossorigin="anonymous"
+/>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js"
+  integrity="sha384-G0zcxDFp5LWZtDuRMnBkk3EphCK1lhEf4UEyEM693ka574TZGwo4IWwS6QLzM/2t"
+  crossorigin="anonymous"
+></script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js"
+  integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+  crossorigin="anonymous"
+></script>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', () =>
+    renderMathInElement(document.body, {
+      
+      
+      delimiters: [
+        { left: '$$', right: '$$', display: true },
+        { left: '$', right: '$', display: false },
+      ],
+      
+      throwOnError: false,
+    }),
+  );
+</script>
 
   
   
@@ -289,16 +328,45 @@
 
 <article>
   <header class="mb-14">
-    <h1 class="!my-0 pb-2.5">Contatti</h1>
+    <h1 class="!my-0 pb-2.5">Math Typesetting</h1>
 
+    
+    <div class="text-xs antialiased opacity-60">
+      
+      <time>8 mar 2019</time>
+      
+      
+      
+      
+      <span class="mx-1">&middot;</span>
+      <span>lee.so</span>
+      
+    </div>
     
   </header>
 
-  <section><ul>
-<li><a href="https://nddanailov.com">nddanailov.com</a></li>
-<li><a href="mailto:me@nddanailov.com">me@nddanailov.com</a></li>
+  <section><p>Mathematical notation in a Hugo project can be enabled by using third party JavaScript libraries.</p>
+<p>In this example we will be using <a href="https://katex.org/">KaTeX</a></p>
+<ul>
+<li>Create a partial under <code>/layouts/partials/math.html</code></li>
+<li>Within this partial reference the <a href="https://katex.org/docs/autorender.html">Auto-render Extension</a> or host these scripts locally.</li>
+<li>Include the partial in your templates like so:</li>
 </ul>
-</section>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">{{</span> <span style="color:#66d9ef">if</span> or .Params.math .Site.Params.math <span style="color:#f92672">}}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">{{</span> partial <span style="color:#e6db74">&#34;math.html&#34;</span> . <span style="color:#f92672">}}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">{{</span> end <span style="color:#f92672">}}</span>
+</span></span></code></pre></div><ul>
+<li>To enable KaTeX globally set the parameter <code>math</code> to <code>true</code> in a project&rsquo;s configuration</li>
+<li>To enable KaTeX on a per page basis include the parameter <code>math: true</code> in content files</li>
+</ul>
+<p><strong>Note:</strong> Use the online reference of <a href="https://katex.org/docs/supported.html">Supported TeX Functions</a></p>
+
+<h3 id="examples">Examples</h3>
+
+<p>Block math:</p>
+<p>$$
+\varphi = 1+\frac{1} {1+\frac{1} {1+\frac{1} {1+\cdots} } }
+$$</p></section>
 
   
   
@@ -306,6 +374,21 @@
   
   
   
+  
+  <nav
+    class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg !leading-[1.2] *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
+  >
+    
+    <a class="pr-3" href="http://localhost:1313/post/rich-content/"
+      ><span class="mr-1.5">←</span><span>Rich Content</span></a
+    >
+    
+    
+    <a class="ml-auto justify-end pl-3" href="http://localhost:1313/post/emoji-support/"
+      ><span>Emoji Support</span><span class="ml-1.5">→</span></a
+    >
+    
+  </nav>
   
   
 
